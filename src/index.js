@@ -7,6 +7,8 @@ import {
   deleteDoc,
   doc,
   onSnapshot,
+  query,
+  where,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -27,12 +29,10 @@ const db = getFirestore();
 // collection ref
 const colRef = collection(db, "books");
 
+// queries
+const q = query(colRef, where("author", "==", "patrick rothfuss"));
+
 // real time collection data
-getDocs(colRef)
-  .then((snapshot) => {})
-  .catch((err) => {
-    console.log(err.message);
-  });
 
 onSnapshot(colRef, (snapshot) => {
   let books = [];
