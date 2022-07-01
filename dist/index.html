@@ -45,11 +45,14 @@
 
     <form class="login">
       <label for="email">email:</label>
-      <input type="email" name="email" />
+      <input type="email" name="email" autocomplete="off" />
       <label for="password">password:</label>
-      <input type="password" name="password" />
+      <input type="password" name="password" autocomplete="off" />
       <button>login</button>
     </form>
+
+    <h2>Unsubscribing</h2>
+    <button class="unsub">unsubscribe from db/auth changes</button>
 
     <button class="logout">logout</button>
     <script src="bundle.js"></script>
